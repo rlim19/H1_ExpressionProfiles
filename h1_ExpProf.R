@@ -46,3 +46,18 @@ h1_rep2Gene <- join(h1_rep2, gp4133_geneID, by='ID')
 
 head(h1_rep1Gene)
 head(h1_rep2Gene)
+
+# remove NAs
+h1_rep1Gene <- h1_rep1Gene[complete.cases(h1_rep1Gene),]
+h1_rep2Gene <- h1_rep2Gene[complete.cases(h1_rep2Gene),]
+head(h1_rep1Gene)
+
+# remove rows without ENSEMBL_ID
+h1_rep1Gene <- h1_rep1Gene[!(h1_rep1Gene$ENSEMBL_ID==""),]
+h1_rep2Gene <- h1_rep2Gene[!(h1_rep2Gene$ENSEMBL_ID==""),]
+head(h1_rep1Gene)
+head(h1_rep2Gene)
+
+nrow(h1_rep1Gene)
+nrow(h1_rep2Gene)
+
