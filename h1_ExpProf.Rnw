@@ -137,8 +137,9 @@ The file of Ensembl coordinates was obtained from
 \begin{verbatim}
   /software/private/gfilion/Genomes/hg19/genes/ensGene.txt
 \end{verbatim}
-<<Ensembl_coord, cache=TRUE>>=
+<<Ensemblcoord, cache=TRUE>>=
 # load the ensembl_Coordinate
+library(plyr)
 Ensembl_coord <- read.table("input/ensGene.txt", header=FALSE)
 head(Ensembl_coord)
 Ensembl_id <- Ensembl_coord[,c("V2", "V3", "V5","V6")]
